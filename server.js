@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
+const PORT = process.env.PORT || 3001;
 
 const io = new Server(server, {
   cors: {
@@ -74,7 +75,7 @@ io.on('connection', (socket) => {
 });
 
 
-server.listen(3001, () => {
+server.listen(PORT, () => {
   console.log('Server listening on port 3001');
 });
 
